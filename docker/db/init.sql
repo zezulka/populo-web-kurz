@@ -1,18 +1,18 @@
-CREATE TABLE league(
+CREATE TABLE IF NOT EXISTS league(
     id             serial      PRIMARY KEY,
     name           varchar(64) NOT NULL,
     country        varchar(4)  NOT NULL,
     UNIQUE(name)
 );
 
-CREATE TABLE club(
+CREATE TABLE IF NOT EXISTS club(
     id             serial      PRIMARY KEY,
     name           varchar(64) NOT NULL,
     league         integer     NOT NULL REFERENCES league,
     UNIQUE(name)
 );
 
-CREATE TABLE player(
+CREATE TABLE IF NOT EXISTS player(
     id             serial      PRIMARY KEY,
     first_name     varchar(32) NOT NULL,
     last_name      varchar(32) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE player(
     club           integer     NOT NULL REFERENCES club
 );
 
-CREATE TABLE match(
+CREATE TABLE IF NOT EXISTS match(
     id             serial      PRIMARY KEY,
     host_goals     integer     NOT NULL,
     guest_goals    integer     NOT NULL,
@@ -34,7 +34,8 @@ CREATE TABLE match(
 INSERT INTO league(name, country)
 VALUES
     ('Premier League', 'GB'),
-    ('Primera División', 'ES');
+    ('Primera División', 'ES')
+ON CONFLICT DO NOTHING;
 
 INSERT INTO club(name, league)
 VALUES
@@ -86,7 +87,8 @@ VALUES
     ('Sevilla', 2),
     ('Valencia', 2),
     ('Valladolid', 2),
-    ('Villarreal', 2);
+    ('Villarreal', 2)
+ON CONFLICT DO NOTHING;
 
 INSERT INTO player(first_name, last_name, date_of_birth, country, club)
 VALUES
@@ -102,13 +104,19 @@ VALUES
     ('Miguel', 'Almirón', '1994-02-10', 'PY', 11),
     ('Nick', 'Pope', '1992-04-19', 'GB', 11),
     ('Ivan', 'Toney', '1996-03-16', 'GB', 13),
-    ('Aleksandar', 'Mitrović', '1994-09-16', 'RS', 18);
+    ('Aleksandar', 'Mitrović', '1994-09-16', 'RS', 18)
+ON CONFLICT DO NOTHING;
 
+WITH match_gen AS (
+    SELECT DISTINCT ON (host, guest)
+        floor(random() * 4),
+        ceil(random() * 4),
+        1 + floor(random() * 20) AS host,
+        1 + floor(random() * 20) AS guest,
+        1
+    FROM generate_series(1,10)
+)
 INSERT INTO match(host_goals, guest_goals, host, guest, league)
-SELECT DISTINCT ON (host, guest)
-    floor(random() * 4),
-    ceil(random() * 4),
-    1 + floor(random() * 20) AS host,
-    1 + floor(random() * 20) AS guest,
-    1
-FROM generate_series(1,10);
+SELECT * 
+FROM match_gen
+WHERE match_gen.host <> match_gen.guest;
