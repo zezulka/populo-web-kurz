@@ -1,0 +1,10 @@
+co probrat na lekci:
+- vložení reklamy: element <img> a jeho atributy
+- banner.php
+- projít základní koncepty css
+    - atribut style u elementů
+    - element <style> v hlavičce
+    - odkazování na elementy v CSS: element, třída, pseudotřída (a:link), kontextová deklarace (h3 a { color: black; })
+    - okraje elementů, rozdíl mezi paddingem a marginem
+    - perfektní studijní materiál v češtině je zde: https://www.jakpsatweb.cz/css/ (stránky vypadají trochu fousatě, ale ono se toho moc za tu dobu nezměnilo :) )
+    - dále si taky můžeš nastudovat, jak fungují animace https://www.vzhurudolu.cz/prirucka/css3-animations, případně se můžeš podívat sem na příklady http://www.x-idea.cz/animace-pomoci-css3/

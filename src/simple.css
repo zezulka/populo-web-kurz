@@ -12,57 +12,49 @@
   /* color: black;*/
 }
 
-.content-container {
-  width: 800px;
+.root-container {
+  /* fixně daná šíře celého html dokumentu: 800px na samotný obsah v iframu, 250px na obrázek postranní reklamy */
+  width: 1050px;
+  /* zacentrování dokumentu na střed */
   margin: 0 auto;
 }
 
 .content-wrap {
   margin: 0 auto;
+  /* okolo celého obsahu chceme umístit rámeček */
   border: 1px solid #282A3A;
 }
 
 .banner-wrap {
   margin: auto;
+  /* pokud by nedopatřením obsah reklamního baneru přetékal přes jeho definované hranice, nezobrazuj ho */
   overflow: hidden;
 }
 
 .banner {
+  /* položky seznamu chceme zobrazit vedle sebe, více info na https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
   display: flex;
-  margin: auto;
-  padding: 0;
+  /* seznam tří obrázků organizujeme v neseřazeném seznamu, potřebujeme se zbavit odrážek */
   list-style: none;
-  text-align: center;
+  /* odstraňujeme padding */
+  padding: 0;
+  /* CSS animace zajišťuje protáčení obrázků */
   animation: slide 9s steps(3) forwards infinite;
 }
 @keyframes slide {
   to {
+    /* posuň se o tři obrázky (co 100%, co jeden obrázek) */
     transform: translateX(-300%);
   }
 }
 .banner li {
+  /* každý obrázek bude zabírat přesně třetinu */
   width: 33.3333%;
   flex: 1 0 33.3333%;
-  max-width: 33.3333%;
 }
 
 .banner img {
   width: 100%;
-  animation: fade 3s ease-in-out infinite alternate;
-}
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
 .navbar {

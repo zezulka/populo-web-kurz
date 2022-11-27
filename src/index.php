@@ -8,10 +8,13 @@
     <!-- tímto elementem načítáme externí písmo -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
     <title>TEXPRA, s.r.o.</title>
+    <style>
+        /* i takto lze vkládat kaskádové styly */
+    </style>
 </head>
 <body>
     <pageContent>
-        <div class="content-container">
+        <div class="root-container">
             <div class="content-wrap">
                 <div class="banner-wrap">
                     <ul class="banner">
@@ -32,9 +35,13 @@
                     </div>
                     <a href="#">Kontakt</a>
                 </nav>
+                <!-- TODO sem vlož obrázek, který bude odpovídat existujícímu návrhu a bude mít šíři 250 pixelů -->
                 <!-- frame má rozměry 800x600 px, jeho identifikátor je "content" a výchozí stránka, která se má zobrazit, je soubor "about.html" -->
                 <iframe src="about.html" width="800px" height="600px" id="content" name="content" frameBorder="0"></iframe>
             </div>
+            <!-- TODO ukaž rozdíl mezi paddingem a marginem -->
+            <!-- souřadnice: top right bottom left -->
+            <!--<p class="demo" style="border: 1px solid red; padding: 30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptates, minus delectus, mollitia non recusandae aspernatur quibusdam culpa quia omnis, repellat vero eum tenetur iste itaque! Eligendi perferendis repudiandae soluta?</p>-->
             <?php require("copyright.php") ?>
         </div>
     </pageContent>    
