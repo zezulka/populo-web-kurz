@@ -1,3 +1,7 @@
+iframe {
+  border-width: 0px;
+}
+
 /* třída lobsterHead ze zadání, která používá externí font */
 .lobsterHead {
   font-family: Lobster;
@@ -26,7 +30,7 @@
 }
 
 .banner-wrap {
-  margin: auto;
+  margin: 0 auto;
   /* pokud by nedopatřením obsah reklamního baneru přetékal přes jeho definované hranice, nezobrazuj ho */
   overflow: hidden;
 }

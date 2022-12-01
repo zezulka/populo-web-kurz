@@ -8,3 +8,11 @@ co probrat na lekci:
     - okraje elementů, rozdíl mezi paddingem a marginem
     - perfektní studijní materiál v češtině je zde: https://www.jakpsatweb.cz/css/ (stránky vypadají trochu fousatě, ale ono se toho moc za tu dobu nezměnilo :) )
     - dále si taky můžeš nastudovat, jak fungují animace https://www.vzhurudolu.cz/prirucka/css3-animations, případně se můžeš podívat sem na příklady http://www.x-idea.cz/animace-pomoci-css3/
+
+
+odkazy na PHP:
+php.net - oficiální dokumentace jazyka PHP
+
+na další hodinu:
+- projít si, jak se dynamicky vkládá obsah pomocí php (require, include)
+- projít soubor banner.php, hlavně funkci image_gallery
