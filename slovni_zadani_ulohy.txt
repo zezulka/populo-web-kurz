@@ -1,0 +1,67 @@
+V souboru src/index.php máš předchystanou kostru kódu. Tvým úkolem je naprogramovat funkce tak,
+aby se chovaly podle níže uvedeného zadání. Doporučuji si oba soubory (jak tento dokument, tak kód)
+otevřít vedle sebe.
+
+Možná sis všiml, že verzi našeho webového projektu jsem očesal o soubory, které souvisely s prezentací
+firmy Texpra. V této větvi se budeme soustředit pouze na samotný kód, aby sis osvojil základy PHP.
+Infrastrukturu (tzn. rozjetí webového serveru) jsem záměrně nechal, aby sis mohl svoje řešení průběžně zkoušet.
+
+Pořád tedy platí, že přes pravé tlačítko myši na soubor docker-compose.yml a kliknutí na "Compose Up"
+se dostaneš k běžící aplikaci, která v tomto případě ale bude interpretovat tvůj kód.
+
+Jako inspiraci můžeš použít soubor, který načítá galerii obrázků (src/banner.php).
+Dozvíš se tam především to, jak se pracuje s poli (funkce image_gallery). Pokud ti nebude práce s poli jasná,
+zkus se mrknout na https://www.php.net/manual/en/control-structures.foreach.php .
+
+I když jsou součástí kostry přibalené testy, správnost úlohy ti rád zkontroluji.
+Stačí zaslat mailem soubor s kódem. Deadline je do pondělního večera.
+
+Zadání:
+
+1. all_greater_than_42($numbers)
+Funkce na svůj vstup bere pole číselných hodnot (jak celočíselných, tak případně s desetinným rozvojem).
+Výstupem je vždy pole čísel. Toto pole bude obsahovat pouze čísla ze vstupu, která jsou ostře větší než 42.
+
+Nápověda: nejspíš se ti bude hodit funkce array_push, která vkládá prvky do pole https://www.php.net/manual/en/function.array-push.php .
+
+2. join_greater_than_42($numbers, $separator)
+Funkce na svůj vstup bere pole číselných hodnot (jak celočíselných, tak případně s desetinným rozvojem).
+Výstupem je řetězec. Tento řetězec na výstup zřetězí všechna čísla ze vstupu ostře větší než 42. Čísla
+mezi sebou oddělíme znakem ','.
+
+Nápověda: největší výzva bude vynechat oddělovací čárku na kraji. Jeden ze způsobů je vzít si první číslo
+z pole, které si uložíš do pomocné proměnné. Druhý až poslední prvek potom zpracuješ tak, že k existujícímu
+výstupu připojíš čárku a číslo.
+
+Pro pole [1,2,3] je myšlenka tedy následující:
+    a) do pomocné proměnné si uložím nejdřív řetězec "1"
+    b) pomocí https://www.php.net/manual/en/function.array-slice.php si vytáhnu celé pole až na první prvek
+       a postupně do mojí pomocné proměnné naskládám ve foreach čísla s oddělovači.
+Pomocná proměnná, kterou na konci vrátíme, bude tedy postupně v čase uchovávat tyto hodnoty:
+    "1"
+    "1,2"
+    "1,2,3"
+
+
+3. create_paragraphs($text)
+Funkce na svůj vstup bere pole řetězců. Jejím výstupem je řetězec. Výstup bude obsahovat všechny řetězce,
+jednotlivě obalené v html elementu <p>. Tento celý seznam <p> bude ještě nakonec obalený nadřazeným elementem <section>.
+Element <section> bude mít zároveň atribut se jménem count, jehož hodnota bude velikost vstupního pole.
+
+Pokud je vstupní pole prázdné, vracíme prázdný řetězec.
+
+4. anchor_menu($urls)
+Funkce na svůj vstup bere pole řetězců. Výstupem je řetězec. Výstup bude obsahovat všechny řetězce,
+jednotlivě obalené v elementu <a>. Každý element <a> bude mít správně nastavený atribut pro odkaz.
+Zároveň chceme, aby se odkazy otevíraly v nové záložce, tedy nechceme, aby nás odkazy přesměrovávaly
+z existující záložky.
+
+Pokud si troufneš, tak vylepšená verze této funkce bude do <a> elementů vkládat pouze jenom ty
+vstupní řetězce, které jsou validními URL. Návod, jak ověřit, jestli je řetězec URL, najdeš na
+https://www.w3schools.com/PhP/filter_validate_url.asp .
+
+Pokud je vstupní pole prázdné, vracíme řetězec "Bez odkazů".
+
+
+
+Hodně zdaru!
