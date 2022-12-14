@@ -17,6 +17,7 @@ $dir = 'banner/';
 
 function image_gallery($img_paths, $dir) {
     $html_content = '';
+    $img_paths = ["a/prvni.jpeg", "a/druhy.jpeg"];
     foreach ($img_paths as $img) {
         // operátor .= přidává obsah na konec řetězce, v našem případě připojíme další obrázek ze seznamu
         // \n = znak nového řádku - není třeba, lze vynechat
