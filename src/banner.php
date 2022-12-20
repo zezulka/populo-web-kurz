@@ -13,11 +13,10 @@
 <!-- i když máme kód oddělený v souboru, je třeba i tak používat deklaraci <?php ?> -->
 <?php
 // odkaz na složku, odkud čteme obrázky
-$dir = 'banner/';
+$dir = 'birds/';
 
 function image_gallery($img_paths, $dir) {
     $html_content = '';
-    $img_paths = ["a/prvni.jpeg", "a/druhy.jpeg"];
     foreach ($img_paths as $img) {
         // operátor .= přidává obsah na konec řetězce, v našem případě připojíme další obrázek ze seznamu
         // \n = znak nového řádku - není třeba, lze vynechat
