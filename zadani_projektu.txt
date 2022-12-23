@@ -1,0 +1,75 @@
+Pan Pospíšil Tě oslovil, abys mu navrhl webové stránky, na kterých bude prezentovat
+svojí půjčovnu vzducholodí.
+
+Chce, aby webová prezentace měla následující obsah:
+a) roletkové menu
+b) úvodní stránku, která zobrazí základní informace o půjčovně
+c) samotnou stránku, která bude zobrazovat nabídku vzducholodí
+d) prostor pro reklamu
+e) ceník služeb
+f) informace o panu Pospíšilovi
+
+Technické specifikace:
+
+Obsah budeme umisťovat do prostoru, který bude mít rozměry 1200 px na šířku a 900 px na výšku.
+Reklamu budeme zobrazovat vedle obsahu a bude 300 px široká.
+
+Dynamický obsah umístíme do <iframe>, který bude mít identifikátor "content".
+
+Roletkové menu - menu.html
+--------------------------
+Roletkové menu bude umístěno úplně nahoře a bude obsahovat prokliky na všechny dílčí stránky.
+Odkazy budou umístěny v tomto pořadí a s těmito názvy: Domů - Půjčovna - Ceník - Kontakt
+
+Úvodní stránka - welcome.html
+-----------------------------
+Stránka bude statická. Bude obsahovat nadpis úrovně 2 s obsahem "Vítejte!" a pod ním budou umístěny
+základní informace o stránce, které najdeme v souboru src/resources/texts/welcome.txt. Co řádek souboru txt,
+to nový odstavec v HTML dokumentu.
+
+Na stránku nemáme žádné stylistické požadavky.
+
+Nabídka vzducholodí - goods.php
+-------------------------------
+Zde zobrazíme nabídku vzducholodí a to dynamicky podle obrázku, které máme uložené na webserveru ve
+složce src/resources/airships.
+
+Tato složka je dále strukturována do podsložek, konkrétně podle typu použití vzducholodě:
+- indoor
+- outdoor
+- tourist
+
+Pro jednoduchost můžeme počítat s tím, že dané kategorie jsou statické a nikdy je nebudeme měnit.
+
+Nabídku vzducholodí naimplementujeme jako tabulku, která bude mít následující tři sloupce:
+- samotný obrázek vzducholodě, který bude mít zafixované rozměry a to 128 px na šířku a 84 px
+    na výšku; jako alternativní text obrázku (atribut 'alt') zobrazíme název souboru
+- kategorii vzducholodě, která bude odpovídat kategoriím popsaným výše
+- popis vzducholodě
+
+Tabulka bude mít následující záhlaví:
+╔═══════════╦════════════╦══════════════╗
+║ Ilustrace ║ Kategorie  ║ Popis        ║
+╚═══════════╩════════════╩══════════════╝
+
+Text pro sloupec kategorie bude mít podmíněnou barvu písma.
+- indoor : modrá
+- outdoor : zelená
+- tourist : zlatá
+
+Popis vzducholodi bude podmíněný jeho kategorií. Pokud je kategorie 'indoor',
+zobrazíme text "Vhodné především pro prezentaci ve velkých halách a nákupních centrech.",
+jinak "Bez popisu.".
+
+Ceník služeb - pricing.html
+---------------------------
+Na tuto stránku vložíme statickou tabulku. Data pro ní najdeme v souboru src/resources/texts/pricing.txt.
+
+První sloupec bude mít šířku 150 px, ostatní 200 px. Záhlaví bude mít černé pozadí a bílé písmo.
+
+Informace o panu Pospíšilovi - about.html
+-----------------------------------------
+Obdobně jako u úvodní stránky vyplníme obsah statickými odstavci.
+Text najdeme v souboru src/resources/texts/about.txt.
+
+Text bude zarovnaný na střed iframu a písmo bude mít velikost 'large'.
