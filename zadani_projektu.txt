@@ -11,10 +11,12 @@ f) informace o panu Pospíšilovi
 
 Technické specifikace:
 
-Obsah budeme umisťovat do prostoru, který bude mít rozměry 1200 px na šířku a 900 px na výšku.
-Reklamu budeme zobrazovat vedle obsahu a bude 300 px široká.
+Celý obsah budeme umisťovat do prostoru, který bude mít rozměry 1200 px na šířku a 900 px na výšku.
 
-Dynamický obsah umístíme do <iframe>, který bude mít identifikátor "content".
+Dynamický obsah umístíme do <iframe>, který bude mít identifikátor "content". <iframe> bude mít
+rozměry 800x870px.
+
+Reklamu budeme zobrazovat vedle dynamického obsahu a bude 300 px široká.
 
 Roletkové menu - menu.html
 --------------------------
